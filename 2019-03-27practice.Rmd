@@ -66,10 +66,33 @@ bL <- c(-2L, -4L, 8L)
 ```{r}
 a+aL
 a+bL
+aL+bL
 ```
-
 ```{r}
 class(a+aL)
 class(a/b)
+class(aL+bL)
 ```
+```{r}
+a+5
+```
+```{r}
+a^b
+a %% b
+```
+```{r}
+twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
+```
+```{r}
+twDateTime+1
+```
+```{r}
+object1 <- ymd("2019-08-11")
+object2 <- ymd("2000-02-01")
+```
+
+```{r}
+object1+object2
+```
+
 
