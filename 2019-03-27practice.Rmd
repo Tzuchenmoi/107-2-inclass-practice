@@ -94,5 +94,15 @@ datetime2 <- ymd("2000-02-01")
 ```{r}
 datetime1-datetime2
 ```
+```{r}
+datetime1 + years(1)
+datetime2 + dyears(1)
+```
+```{r}
+startingDate <- ymd("2000-02-17")
+```
+```{r}
+startingDate + dyears(1)
+```
 
 
