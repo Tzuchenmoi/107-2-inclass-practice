@@ -12,6 +12,14 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 Sys.timezone()
 ```
+```{r}
+dtObject<-ymd_hms("1970-01-01 00:02:53") 
+```
+
+```{r}
+class(dtObject)
+```
+
 
 ```{r}
 twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
@@ -20,7 +28,6 @@ twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
 ```{r}
 LisbonDateTime <- with_tz(twDateTime,tzone="Europe/Lisbon")
 ```
-
 
 ```{r}
 typeof(twDateTime)
