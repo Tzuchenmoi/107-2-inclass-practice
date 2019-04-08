@@ -39,5 +39,19 @@ exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/mas
 currency <- exData2$幣別
 ```
 
+```{r}
+head(currency)
+```
 
+```{r}
+currency <- as.factor(currency)
+class(currency)
+```
+
+```{r}
+levels(currency)
+```
+```{r}
+length(levels(currency))
+```
 
