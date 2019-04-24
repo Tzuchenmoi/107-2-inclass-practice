@@ -63,4 +63,17 @@ StuDF2 <- data.frame(
   )
 StuDF2 
 ```
+```{r}
+class(StuList)
+as.data.frame(StuList) -> StuDF3
+
+class(StuDF3)
+StuDF3
+as.data.frame(StuList,stringsAsFactors = F) -> StuDF4
+class(StuDF4)
+StuDF4
+```
+```{r}
+
+```
 
