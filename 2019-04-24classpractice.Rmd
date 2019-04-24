@@ -16,13 +16,51 @@ Mat1
 Mat1[[2]]
 ```
 ```{r}
-Mat2 <- matrix(
-  c("a","b","c","d"), 2, 2
-)
-Mat2
+MAT2 <- matrix(c("a","b","c","d"),2,2)
+
+class(MAT2)
+typeof(MAT2)
+MAT2[[2]]
+MAT2[c(T,F,F,T)]
 ```
 
 ```{r}
+StuList <- list(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuList 
+```
+```{r}
+StuDF <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuDF 
+```
+```{r}
+class(StuDF)
+typeof(StuDF)
+```
 
+```{r}
+StuDF[[2]][[3]]
+```
+```{r}
+class(StuDF$姓名)
+
+StuDF$姓名 <- as.character(StuDF$姓名)
+class(StuDF$姓名)
+```
+```{r}
+StuDF2 <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50),
+  stringsAsFactors = FALSE
+  )
+StuDF2 
 ```
 
