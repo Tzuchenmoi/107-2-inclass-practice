@@ -19,3 +19,38 @@ names(Vector1)
 Vector1[["名稱4"]]
 ```
 
+```{r}
+StuDF2 <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50),
+  stringsAsFactors = FALSE
+  )
+StuDF2 
+```
+
+```{r}
+colnames(StuDF2) <- c("col1","col2","col3")
+colnames(StuDF2)
+StuDF2
+```
+
+```{r}
+colnames(StuDF2)[[2]] <- c("姓名")
+colnames(StuDF2)
+StuDF2
+```
+
+```{r}
+colnames(StuDF2)[c(2,3)] <- c("name","grade")
+colnames(StuDF2)
+StuDF2
+```
+```{r}
+a <- c("1","b","TRUE")
+a
+a[[2]] <- "c" # 元素存在
+a[[5]] <- "7" # 元素不存在
+a
+```
+
