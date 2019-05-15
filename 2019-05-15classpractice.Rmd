@@ -1,0 +1,21 @@
+---
+title: '2019-05-15'
+output: html_document
+---
+
+```{r}
+Vector1 <- letters[1:6]
+Vector1
+
+names(Vector1)
+```
+
+```{r}
+names(Vector1) <- c('名稱1','名稱2','名稱3','名稱4','名稱5','名稱6')
+names(Vector1)
+```
+
+```{r}
+Vector1[["名稱4"]]
+```
+
