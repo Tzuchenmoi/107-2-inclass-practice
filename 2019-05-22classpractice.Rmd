@@ -1,0 +1,56 @@
+---
+title: '2019-05-22'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+invoiceList <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/invoiceList.csv",
+col_types = cols(訂單時間.以訂單時區顯示. = col_character()))
+names(invoiceList)[[2]] <- "訂單時區之下單時間"
+library(lubridate)
+```
+```{r}
+(invoiceList$訂單時區=="Asia/Taipei") -> tpLogical
+ymd_hms(invoiceList$`訂單時區之下單時間`[tpLogical],tz="Asia/Taipei") ->tpdateTime
+invoiceList$UTC時間[tpLogical] <-with_tz(tpdateTime,tzone="UTC")
+```
+
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+```
+
+```{r}
+studentID <-"92aS67fee" 
+transcriptDataFinal$學號==studentID -> logiChosenStudent
+
+subSample <- transcriptDataFinal[logiChosenStudent,]
+
+sum(subSample$學期成績*subSample$學分數)/
+  sum(subSample$學分數) -> GPA
+```
+
+```{r}
+#請把以America/New_York時區輸入的時間字串"1973-02-21 12:05:22"，轉成date time class, 再改成Asia/Taipei時間顯示。#
+#ymd_hms_tzChange(input,fromTzone,toTzone)
+
+ymd_hms_tzChange <- function(ny,fromTzone,toTzone){
+  dateTime <-ymd_hms(ny,tz=fromTzone)
+  toTzone <-with_tz(dateTime,tzone=toTzone)
+  return(toTzone)
+  }
+```
+```{r}
+ymd_hms_tzChange("1973-02-21 12:05:22","America/New_York","Asia/Taipei")
+```
+```{r}
+
+```
+
+## R Markdown
+
