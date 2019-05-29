@@ -126,12 +126,18 @@ gpa_fun <- function(studentID){
   
   sum(subSample$學期成績*subSample$學分數)/
     sum(subSample$學分數) -> GPA
-  if(studentID==NULL){
-    message("查無此學號")
+  if(!studentID%in%transcriptDataFinal$學號){
+    message("non ID")
   }else{
     return(GPA)
   }
 }
+
+
+gpa_fun("92aS67fee") # 顯示82.85276
+gpa_fun("aa829838s") # 
+```
+```{r}
 
 ```
 
