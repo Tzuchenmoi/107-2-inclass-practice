@@ -42,3 +42,20 @@ for (i in seq_along(commitHistory)) {
 }
 ```
 
+```{r}
+for(i in seq_along(commitHistory)){
+  (commitHistory[[i]][["commit"]][["author"]][["name"]]==
+     commitHistory[[i]][["commit"]][["committer"]][["name"]]) ->
+    logiResult
+  print(logiResult)  
+}
+```
+
+```{r}
+for (i in seq_along(commitHistory)){
+  print(
+    commitHistory[[i]][["commit"]][["author"]][["name"]] == commitHistory[[i]][["commit"]][["committer"]][["name"]]
+  )
+}1
+```
+
